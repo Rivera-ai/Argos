@@ -1,7 +1,7 @@
 # Argos: OSINT Research Agent
 
 <div align="center">
-  <img src="argos.png" alt="argos Logo" width="200"/>
+  <img src="argoslogo.png" alt="argos Logo" width="200"/>
 </div>
 
 
