@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argos OSINT - Profile Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: #ffffff !important;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            color: #e5ff00;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: #e5ff00;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .trait-item {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .trait-item:last-child {
+            border-bottom: none;
+        }
+
+        .progress {
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 0.5rem;
+            border-radius: 1rem;
+        }
+
+        .progress-bar {
+            background-color: #e5ff00;
+        }
+
+        .list-custom li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .list-custom li i {
+            color: #e5ff00;
+            margin-right: 0.75rem;
+        }
+
+        .risk-badge {
+            background-color: #ffd700;
+            color: #000000;
+            padding: 0.25rem 1rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .back-button {
+            color: #e5ff00;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #ccff00;
+            transform: translateX(-5px);
+        }
+
+        .highlight {
+            color: #e5ff00;
+        }
+
+        .btn-outline-warning {
+    color: #e5ff00;
+    border-color: #e5ff00;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+    background-color: #e5ff00;
+    color: #000000;
+    border-color: #e5ff00;
+    transform: translateY(-2px);
+}
+
+.detailed-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detailed-section:last-child {
+    border-bottom: none;
+}
+
+.detailed-section .highlight {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.detailed-section p {
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-eye-fill me-2"></i>
+                Argos OSINT
+            </a>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <a href="index.html" class="back-button">
+            <i class="bi bi-arrow-left me-2"></i>
+            Back to Home
+        </a>
+
+        <div class="text-center mb-5">
+            <h1 class="hero-title">Profile Analysis</h1>
+            <h2 class="hero-subtitle">@realDonaldTrump</h2>
+        </div>
+
+        <div class="row g-4">
+            <!-- Core Traits -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="section-title">Core Traits</h2>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Organization Level</h3>
+                            <p class="mb-0">Organized</p>
+                        </div>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Social Competence</h3>
+                            <p class="mb-0">High</p>
+                        </div>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Communication Style</h3>
+                            <p class="mb-0">Direct and assertive</p>
+                        </div>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Influence Pattern</h3>
+                            <p class="mb-0">Authoritative</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personality Analysis -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="section-title">Personality Analysis</h2>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-3">Dominant Traits</h3>
+                            <ul class="list-unstyled list-custom">
+                                <li><i class="bi bi-check-circle-fill"></i>Confident</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charismatic</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Outspoken</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Competitive</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Persuasive</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Dynamics -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title">Social Dynamics</h2>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Role in Community</h3>
+                            <p>Central figure and leader</p>
+                        </div>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Influence Level</h3>
+                            <p>Very high</p>
+                        </div>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Interaction Patterns</h3>
+                            <ul class="list-unstyled list-custom">
+                                <li><i class="bi bi-arrow-right-circle-fill"></i>Actively participates in discussions and events</li>
+                                <li><i class="bi bi-arrow-right-circle-fill"></i>Defensive and often retaliatory to criticism</li>
+                                <li><i class="bi bi-arrow-right-circle-fill"></i>Strong connections with political allies and supporters</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ideological Framework -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title">Ideological Framework</h2>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-3">Primary Values</h3>
+                            <ul class="list-unstyled list-custom">
+                                <li><i class="bi bi-star-fill"></i>Patriotism</li>
+                                <li><i class="bi bi-star-fill"></i>Economic nationalism</li>
+                                <li><i class="bi bi-star-fill"></i>Individualism</li>
+                                <li><i class="bi bi-star-fill"></i>Law and order</li>
+                            </ul>
+                        </div>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Political Alignment</h3>
+                            <p>Conservative, aligned with right-wing populist movements</p>
+                        </div>
+                        <div class="trait-item">
+                            <h3 class="h5 mb-2">Cultural References</h3>
+                            <p>American exceptionalism</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Risk Assessment -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title">Risk Assessment</h2>
+                        <div class="d-flex align-items-center mb-4">
+                            <span class="risk-badge me-3">MEDIUM RISK LEVEL</span>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <h3 class="h5 mb-3">Potential Triggers</h3>
+                                <ul class="list-unstyled list-custom">
+                                    <li><i class="bi bi-exclamation-triangle-fill"></i>Political opposition</li>
+                                    <li><i class="bi bi-exclamation-triangle-fill"></i>Media scrutiny</li>
+                                    <li><i class="bi bi-exclamation-triangle-fill"></i>Public protests</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="h5 mb-3">Recommended Monitoring</h3>
+                                <div class="trait-item">
+                                    <h4 class="h6 mb-2">Online Discourse</h4>
+                                    <p>Monitor for escalation in negative sentiment</p>
+                                </div>
+                                <div class="trait-item">
+                                    <h4 class="h6 mb-2">Public Appearances</h4>
+                                    <p>Evaluate responses to hostile crowds</p>
+                                </div>
+                                <div class="trait-item">
+                                    <h4 class="h6 mb-2">Political Developments</h4>
+                                    <p>Watch for shifts in party dynamics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Confidence -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title">Analysis Confidence</h2>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <h3 class="h6 mb-3">Data Quality</h3>
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar" role="progressbar" style="width: 85%" 
+                                             aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">85%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <h3 class="h6 mb-3">Pattern Consistency</h3>
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar" role="progressbar" style="width: 80%" 
+                                             aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">80%</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <h3 class="h6 mb-3">Prediction Reliability</h3>
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar" role="progressbar" style="width: 75%" 
+                                             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="small">75%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#detailedReport" aria-expanded="false">
+                    <i class="bi bi-file-text me-2"></i>
+                    View Detailed Analysis Report
+                </button>
+            </div>
+            
+            <!-- Detailed Analysis Report -->
+            <div class="collapse" id="detailedReport">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title">Detailed Analysis Report</h2>
+                        
+                        <!-- Executive Summary -->
+                        <div class="detailed-section">
+                            <h3 class="h4 highlight mb-3">1. Executive Summary</h3>
+                            <p>The analyzed profile presents a highly organized individual with a central role in their community, characterized by high social competence and an assertive communication style. The subject exhibits dominant traits such as confidence, charisma, and a competitive spirit coupled with a persuasive demeanor. Key findings indicate a strong presence on social media, particularly in political discourse, with a tendency toward reactive and assertive responses to external events. Attention should be directed toward the high visibility of the individual, which may attract criticism and escalate confrontational situations.</p>
+                        </div>
+            
+                        <!-- Psychological Profile -->
+                        <div class="detailed-section">
+                            <h3 class="h4 highlight mb-3">2. Psychological Profile</h3>
+                            <p>The individual displays dominant personality traits that include confidence, charisma, and a competitive nature. These traits facilitate a persuasive communication style, allowing the subject to assert influence effectively within their community. Behavioral patterns reveal a high posting frequency on social media, with a preference for content that addresses political and national issues, personal updates, and celebratory messages. Interaction patterns include high engagement rates through likes and retweets, with replies often characterized as direct and combative. In terms of coping mechanisms, the subject appears to respond defensively to criticism, indicating a potential vulnerability to stress when faced with opposition or negative sentiment.</p>
+                        </div>
+            
+                        <!-- Social Dynamics -->
+                        <div class="detailed-section">
+                            <h3 class="h4 highlight mb-3">3. Social Dynamics and Relationships</h3>
+                            <p>The subject plays a pivotal role in their social environment, often serving as a central figure and leader within their community. Their influence level is assessed as very high, with active participation in discussions and events. Interaction patterns reveal a tendency to engage defensively when confronted with criticism, suggesting a reluctance to back down from challenges. The individual maintains strong connections with political allies and supporters, indicating a well-established network that reinforces their influence. In different social contexts, the subject exhibits a capacity for both leadership and confrontational behavior, adapting their approach based on the audience and situation.</p>
+                        </div>
+            
+                        <!-- Ideology -->
+                        <div class="detailed-section">
+                            <h3 class="h4 highlight mb-3">4. Ideology and Values</h3>
+                            <p>The individual's system of beliefs is rooted in values such as patriotism, economic nationalism, individualism, and a strong commitment to law and order. Ideologically, the subject aligns with conservative perspectives, particularly on social issues, advocating for pro-business stances and anti-immigration policies. Cultural references suggest a strong alignment with themes of American exceptionalism. Changes in perspective may reflect broader socio-political trends, influenced by right-wing populist movements. The subject's ideological positions are often expressed through social media commentary, highlighting their commitment to these values.</p>
+                        </div>
+            
+                        <!-- Risk Analysis -->
+                        <div class="detailed-section">
+                            <h3 class="h4 highlight mb-3">5. Risk Analysis</h3>
+                            <p>Identified risk factors include the subject's high visibility, which may attract criticism and potential backlash from opposing viewpoints. The potential for inflammatory rhetoric and the risk of escalation in confrontational situations are notable concerns. Current risk levels are assessed as medium, with potential triggers identified as political opposition, media scrutiny, and public protests. Recommended monitoring includes online discourse for signs of escalating negative sentiment, public appearances to evaluate responses to hostile crowds, and political developments for shifts in party dynamics.</p>
+                        </div>
+            
+                        <!-- Outlook -->
+                        <div class="detailed-section">
+                            <h3 class="h4 highlight mb-3">6. Outlook and Trends</h3>
+                            <p>Emerging patterns of behavior suggest an increasing tendency towards assertiveness and confrontation, particularly in response to political opposition. Possible future developments may include heightened engagement in political discourse, with the potential for further escalation in confrontational situations. Areas of concern include the individual's reaction to public criticism and the dynamics of their social networks, which may evolve in response to external pressures. Preventative interventions may involve strategies for managing public perception and moderating communication styles to reduce the risk of escalation.</p>
+                        </div>
+            
+                        <!-- Conclusions -->
+                        <div class="detailed-section">
+                            <h3 class="h4 highlight mb-3">7. Conclusions and Recommendations</h3>
+                            <p>In summary, the analyzed profile reveals a confident and charismatic individual with a significant influence in their community and a pronounced assertive communication style. The overall risk level is assessed as medium, with specific recommendations for action including:</p>
+                            <ul class="list-unstyled list-custom mt-3">
+                                <li><i class="bi bi-arrow-right-circle-fill"></i>Monitoring online discourse to preempt potential backlash</li>
+                                <li><i class="bi bi-arrow-right-circle-fill"></i>Developing strategies for engaging constructively with criticism</li>
+                                <li><i class="bi bi-arrow-right-circle-fill"></i>Encouraging a more moderated approach to communication to mitigate risks of escalation</li>
+                                <li><i class="bi bi-arrow-right-circle-fill"></i>Conducting follow-up assessments of social media behavior</li>
+                            </ul>
+                            <p class="mt-3">Limitations of the analysis include the reliance on digital footprint data, which may not capture the full complexity of the individual's behavior or the nuances of their social relationships. Further qualitative research may enhance understanding of the subject's motivations and contextual influences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container py-4 text-center">
+        <p class="text-muted">
+            Argos OSINT Analyzer - Profile Analysis Example
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

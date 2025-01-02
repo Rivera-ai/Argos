@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argos OSINT Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: #ffffff !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            margin-left: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #e5ff00;
+        }
+
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-body {
+            color: #ffffff;
+        }
+
+        .section-title {
+            color: #e5ff00;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: #e5ff00;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #e5ff00;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #e5ff00;
+            color: #000000;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ccff00;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .github-link {
+            color: #e5ff00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .github-link:hover {
+            color: #ccff00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-eye-fill me-2"></i>
+                    Argos OSINT
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile_analyzer.html">Demo Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ethics">Ethics</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Argos OSINT Analyzer</h1>
+                <p class="hero-subtitle">
+                    An experimental agent that uses OSINT (Open Source INTelligence) to analyze digital profiles
+                    and create comprehensive behavioral assessments
+                </p>
+                <a href="profile_analyzer.html" class="btn btn-primary">
+                    View Demo Analysis
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-5" id="about">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="section-title">Why "Argos"?</h2>
+                                <p>
+                                    Named after Argos Panoptes from Greek mythology, known as "the all-seeing" 
+                                    with his hundred eyes. This mythological figure symbolizes the project's ability 
+                                    to observe and analyze multiple data sources simultaneously.
+                                </p>
+                                <p>
+                                    Just as Argos maintained constant vigilance with his hundred eyes, 
+                                    our tool processes multiple streams of publicly available information 
+                                    to create comprehensive behavioral profiles.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="section-title">Capabilities</h2>
+                                <div class="mb-4">
+                                    <i class="bi bi-graph-up feature-icon"></i>
+                                    <h3 class="h5 mb-2">Behavioral Analysis</h3>
+                                    <p>Advanced profiling based on digital footprints and social media activity</p>
+                                </div>
+                                <div class="mb-4">
+                                    <i class="bi bi-people feature-icon"></i>
+                                    <h3 class="h5 mb-2">Social Dynamics</h3>
+                                    <p>Understanding community roles and interaction patterns</p>
+                                </div>
+                                <div>
+                                    <i class="bi bi-shield-check feature-icon"></i>
+                                    <h3 class="h5 mb-2">Risk Assessment</h3>
+                                    <p>Evaluation of potential behavioral patterns and risk factors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ethics Section -->
+        <section class="py-5" id="ethics">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title">Ethical Considerations</h2>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <i class="bi bi-lock feature-icon"></i>
+                                <h3 class="h5 mb-3">Privacy First</h3>
+                                <p>
+                                    While analyzing public data, we maintain strict respect for privacy 
+                                    boundaries and data protection principles.
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="bi bi-shield feature-icon"></i>
+                                <h3 class="h5 mb-3">Responsible Use</h3>
+                                <p>
+                                    Development focuses on ethical applications while avoiding potential 
+                                    misuse of the technology.
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="bi bi-eye feature-icon"></i>
+                                <h3 class="h5 mb-3">Transparency</h3>
+                                <p>
+                                    Clear communication about capabilities and limitations of the 
+                                    analysis system.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container py-4 text-center">
+        <p class="text-muted">
+            Argos OSINT Analyzer - Experimental Project
+            <br>
+            <a href="https://github.com/Rivera-ai/Argos" class="github-link mt-2">
+                <i class="bi bi-github me-2"></i>
+                View on GitHub
+            </a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
